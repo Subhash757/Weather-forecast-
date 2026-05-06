@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body id="body">
+    <div class="weather-app">
+        <header>
+            <h1>Weather</h1>
+            <div class="date-time" id="date-time">Loading...</div>
+            <div class="unit-toggle">
+                <span id="celsius" class="active">°C</span> | <span id="fahrenheit">°F</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="search-container">
+                <input type="text" id="city-input" placeholder="Search for a city..." autocomplete="off">
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div id="error-message" class="error-message hidden">
+                <p><i class="fa-solid fa-circle-exclamation"></i> <span id="error-text">City not found.</span></p>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Fetching weather data...</p>
+            </div>
+
+            <div id="weather-content" class="weather-content hidden">
+                <div class="main-weather">
+                    <div class="weather-icon-container">
+                        <i id="weather-icon" class="fa-solid fa-sun"></i>
+                    </div>
+                    <div class="temperature">
+                        <span id="temp-value">--</span><span id="temp-unit">°C</span>
+                    </div>
+                    <div class="weather-desc" id="weather-desc">--</div>
+                    <div class="city-name" id="city-name">--</div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-card">
+                        <i class="fa-solid fa-droplet"></i>
+                        <div class="detail-info">
+                            <span class="detail-label">Humidity</span>
+                            <span class="detail-value" id="humidity">--%</span>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fa-solid fa-wind"></i>
+                        <div class="detail-info">
+                            <span class="detail-label">Wind Speed</span>
+                            <span class="detail-value" id="wind-speed">-- km/h</span>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fa-solid fa-temperature-half"></i>
+                        <div class="detail-info">
+                            <span class="detail-label">Feels Like</span>
+                            <span class="detail-value" id="feels-like">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
